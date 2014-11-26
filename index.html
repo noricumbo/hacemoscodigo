@@ -8,8 +8,8 @@
 	body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: small; }
 	a { color: #31999A; }
 	#map_canvas { height: 100% }
-	#content {color: #31999A; border-color: none; overflow: hidden; }
-	#content ul { list-style: none; margin: 15px 0; padding: 0; overflow: scroll; height: 180px; background-color: #f1f1f1; }
+	#content {color: #31999A; border-color: none; overflow: hidden; height: 240px; overflow: scroll; }
+	#content ul { list-style: none; margin: 15px 0; padding: 0; background-color: #f1f1f1; }
 	#html {display: none;}
 </style>
 <script type="text/javascript"
@@ -66,7 +66,8 @@
 
 	var infowindow = new google.maps.InfoWindow({
 	    content: contentString,
-		maxWidth: 300
+		maxWidth: 300,
+		maxHeight: 200
 	});
 	
 	var image = 'maquila_marker.png';
@@ -104,10 +105,9 @@
 
 <div id="html">
 	<div id="content">
-		<h1 id="firstHeading" class="firstHeading">Los Maquiladores / Hacemos Código (en México)</h1>
+		<h1 id="firstHeading" class="firstHeading">Hacemos Código</h1>
 		<div id="bodyContent">
-			<p>Aquí hacemos código, puro código.</p>
-			<p>Y no tenemos website, en serio no tenemos, pero lo estamos trabajando ;)</p>
+			<p>Aquí hacemos código, puro código. Y no tenemos website, en serio no tenemos, pero lo estamos trabajando ;)</p>
 			<p>Estos son algunos de los sitios o aplicaciones que hemos hecho con diferentes agencias, diseñadores y clientes:</p>
 			<ul class="lista-paginas">
 				<li><a href="http://www.abiertodediseno.mx" target="_blank">http://www.abiertodediseno.mx</a></li>
