@@ -1,164 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<style type="text/css">
-	html { height: 100% }
-	body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: small; }
-	a { color: #31999A; }
-	#map_canvas { height: 100% }
-	#content {color: #31999A; border-color: none; overflow: hidden; height: 240px; overflow: scroll; }
-	#content ul { list-style: none; margin: 15px 0; padding: 0; background-color: #f1f1f1; }
-	#html {display: none;}
-</style>
-<script type="text/javascript"
-	src="https://maps.google.com/maps/api/js?sensor=true">
-</script>
-<script type="text/javascript">
-	//Primeros parámetros (posicionamiento, zoom y tipo de mapa)
-  function initialize() {
-	var latlng = new google.maps.LatLng(19.416741, -99.159845);
-	var myOptions = {
-	  zoom: 17,
-	  center: latlng,
-	  mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	//Estilos para el mapa
-	var styles = [
-		{
-			featureType: "all",
-			stylers: [
-				{ invert_lightness: true },
-				{ visibility: "on" }
-			]
-		},{
-			featureType: "poi",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		},{
-			featureType: "landscape",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		},{
-			featureType: "transit",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		}
-	];
-	
-	//Crea el objeto mapa
-	var map = new google.maps.Map(document.getElementById("map_canvas"),
-		myOptions);
+	<title>Hacemos Código</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<style type="text/css">
+		html { height: 100% }
+		body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: small; }
+		a { color: #31999A; }
+		#map_canvas { height: 100% }
+		#content {color: #31999A; border-color: none; overflow: hidden; height: 240px; overflow: scroll; }
+		#content ul { list-style: none; margin: 15px 0; padding: 0; background-color: #f1f1f1; }
+		#html {display: none;}
+	</style>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript">
+		//Primeros parámetros (posicionamiento, zoom y tipo de mapa)
+	  function initialize() {
+		var latlng = new google.maps.LatLng(19.416741, -99.159845);
+		var myOptions = {
+		  zoom: 17,
+		  center: latlng,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		//Estilos para el mapa
+		var styles = [
+			{
+				featureType: "all",
+				stylers: [
+					{ invert_lightness: true },
+					{ visibility: "on" }
+				]
+			},{
+				featureType: "poi",
+				elementType: "labels",
+				stylers: [
+					{ visibility: "off" }
+				]
+			},{
+				featureType: "landscape",
+				elementType: "labels",
+				stylers: [
+					{ visibility: "off" }
+				]
+			},{
+				featureType: "transit",
+				elementType: "labels",
+				stylers: [
+					{ visibility: "off" }
+				]
+			}
+		];
 		
-	//Aplica estilos al mapa
-	map.setOptions({styles: styles});
-	
-	//Infowindow
-	
-	var contentString = document.getElementById("html").innerHTML;
-
-	var infowindow = new google.maps.InfoWindow({
-	    content: contentString,
-		maxWidth: 300,
-		maxHeight: 200
-	});
-	
-	var image = 'maquila_marker.png';
-	
-	var marker = new google.maps.Marker({
-	    position: latlng,
-	    map: map,
-		icon: image,
-		animation: google.maps.Animation.DROP,
-	    title:"Los Maquiladores"
-	});
-	
-	infowindow.open(map,marker);
-
-	google.maps.event.addListener(marker, 'click', function() {
-	  infowindow.open(map,marker);
-	});
-	
-	// var casa_nori = new google.maps.LatLng(19.41524, -99.16578);
+		//Crea el objeto mapa
+		var map = new google.maps.Map(document.getElementById("map_canvas"),
+			myOptions);
 			
-	// 		var casa_nori_marker = new google.maps.Marker({
-	// 				position: casa_nori,
-	// 				map: map,
-	// 				icon: image,
-	// 				animation: google.maps.Animation.DROP,
-	// 				title: "Casa Nori"
-	// 		});
-	
-}
+		//Aplica estilos al mapa
+		map.setOptions({styles: styles});
+		
+		//Infowindow
+		
+		var contentString = document.getElementById("html").innerHTML;
 
-</script>
+		var infowindow = new google.maps.InfoWindow({
+		    content: contentString,
+			maxWidth: 300,
+			maxHeight: 200
+		});
+		
+		var image = 'maquila_marker.png';
+		
+		var marker = new google.maps.Marker({
+		    position: latlng,
+		    map: map,
+			icon: image,
+			animation: google.maps.Animation.DROP,
+		    title:"Los Maquiladores"
+		});
+		
+		infowindow.open(map,marker);
+
+		google.maps.event.addListener(marker, 'click', function() {
+		  infowindow.open(map,marker);
+		});
+		
+		// var casa_nori = new google.maps.LatLng(19.41524, -99.16578);
+				
+		// 		var casa_nori_marker = new google.maps.Marker({
+		// 				position: casa_nori,
+		// 				map: map,
+		// 				icon: image,
+		// 				animation: google.maps.Animation.DROP,
+		// 				title: "Casa Nori"
+		// 		});
+		
+	}
+	</script>
 </head>
 <body onload="initialize()">
-<div id="map_canvas" style="width:100%; height:100%"></div>
+	<div id="map_canvas" style="width:100%; height:100%"></div>
 
-<div id="html">
-	<div id="content">
-		<h1 id="firstHeading" class="firstHeading">Hacemos Código</h1>
-		<p><small>Plaza Luis Cabrera 5 - 101 | +52 55 6276 4981 | México DF 06700</small></p>
-		<div id="bodyContent">
-			<p>Aquí hacemos código, puro código. Y no tenemos website, en serio no tenemos, pero lo estamos trabajando ;) (<a href="https://www.facebook.com/HacemosCodigo">fb</a>, <a href="https://twitter.com/hacemoscodigo">tw</a>, <a href="hola [at] hacemoscodigo.com" rel="nofollow" onclick="this.href='mailto:' + 'hola' + '@' + 'hacemoscodigo.com'">mail</a>)</p>
-			<p>Estos son algunos de los sitios o aplicaciones que hemos hecho con diferentes agencias, diseñadores y clientes:</p>
-			<ul class="lista-paginas">
-				<li><a href="https://www.omnilife.com" target="_blank">https://www.omnilife.com</a></li>
-				<li><a href="http://www.mexicocomovamos.mx/" target="_blank">http://www.mexicocomovamos.mx/</a></li>
-				<li><a href="http://www.abiertodediseno.mx" target="_blank">http://www.abiertodediseno.mx</a></li>
-				<li><a href="http://www.marinter.com.mx" target="_blank">http://www.marinter.com.mx</a></li>
-				<li><a href="http://www.residencyunlimited.org" target="_blank">http://www.residencyunlimited.org</a></li>
-				<li><a href="http://www.patycantu.com" target="_blank">http://www.patycantu.com</a></li>
-				<li><a href="http://7boom.mx" target="_blank">http://7boom.mx</a></li>
-				<li><a href="http://www.futboltotal.com.mx" target="_blank">http://www.futboltotal.com.mx</a></li>
-				<li><a href="http://www.moreliafilmfest.com" target="_blank">http://www.moreliafilmfest.com</a></li>
-				<li><a href="http://directoriorealizadoresficm.com" target="_blank">http://directoriorealizadoresficm.com</a></li>
-				<li><a href="http://www.fundacionangelicafuentes.org" target="_blank">http://www.fundacionangelicafuentes.org</a></li>
-				<li><a href="http://www.chicafresh.com" target="_blank">http://www.chicafresh.com</a></li>
-				<li><a href="http://www.stuffmexico.com" target="_blank">http://www.stuffmexico.com</a></li>
-				<li><a href="http://www.vidabancomerdescuentos.com" target="_blank">http://www.vidabancomerdescuentos.com</a></li>
-				<li><a href="http://www.labebeteca.com" target="_blank">http://www.labebeteca.com</a></li>
-				<li><a href="http://www.anavasquez.com" target="_blank">http://www.anavasquez.com</a></li>
-				<li><a href="http://www.tomadeprotesta.com" target="_blank">http://www.tomadeprotesta.com</a></li>
-				<li><a href="http://www.revistadeep.com" target="_blank">http://www.revistadeep.com</a></li>
-				<li><a href="http://www.desclub.com.mx" target="_blank">http://www.desclub.com.mx</a></li>
-				<li><a href="http://www.gamemaster.com.mx" target="_blank">http://www.gamemaster.com.mx</a></li>
-				<li><a href="http://8106.tv" target="_blank">http://8106.tv</a></li>
-				<li><a href="http://arquine.com" target="_blank">http://arquine.com</a></li>
-				<li><a href="http://limulus.mx" target="_blank">http://limulus.mx</a></li>
-				<li><a href="http://prisci.la/" target="_blank">http://prisca.co</a></li>
-				<li><a href="http://www.das.com.mx" target="_blank">http://www.das.com.mx</a></li>
-				<li><a href="http://mariabaez.mx/" target="_blank">http://mariabaez.mx</a></li>
-				<li><a href="http://mfs.mx" target="_blank">http://mfs.mx</a></li>
-				<!-- <li><a href="http://www.lavozmexico.com" target="_blank">http://www.lavozmexico.com</a></li> -->
-				<!-- <li><a href="http://www.childfundmexico.org.mx" target="_blank">http://www.childfundmexico.org.mx</a></li> -->
-				<!-- <li><a href="http://essie.mx" target="_blank">http://essie.mx</a></li> -->
-				<!-- <li><a href="http://tucked-in.com/" target="_blank">http://tucked-in.com/</a></li> -->
-				<!-- <li><a href="http://ibero909.fm" target="_blank">http://ibero909.fm/</a></li> -->
-				<!-- <li><a href="http://thesilverdeer.com/" target="_blank">http://thesilverdeer.com/</a></li> -->
-				<!-- <li><a href="http://www.dr-york.com" target="_blank">http://www.dr-york.com</a></li> -->
-				
-				<!-- <li><a href="http://accionesdf.mx" target="_blank">http://accionesdf.mx</a></li> -->
-				<!-- <li><a href="http://dreamsessions.net" target="_blank">http://dreamsessions.net/</a></li> -->
-				
-				<!-- <li><a href="http://www.fernandomaldonado.mx/" target="_blank">http://www.fernandomaldonado.mx/</a></li> -->
-				<!-- <li><a href="http://www.parodiando.tv" target="_blank">http://www.parodiando.tv</a></li> -->
-				<!-- <li><a href="http://www.pequenosgigantes.tv" target="_blank">http://www.pequenosgigantes.tv</a></li> -->
-				<!-- <li><a href="http://pensionesencrisis.com" target="_blank">http://pensionesencrisis.com</a></li> -->
-				<!-- <li><a href="http://mastalentum.lamaquiladora.com" target="_blank">http://mastalentum.lamaquiladora.com</a></li> -->
-				<!-- <li><a href="http://constructorio.losmaquiladores.com" target="_blank">http://constructorio.losmaquiladores.com</a></li> -->
-			</ul>
+	<div id="html">
+		<div id="content">
+			<h1 id="firstHeading" class="firstHeading">Hacemos Código</h1>
+			<p><small>Plaza Luis Cabrera 5 - 101 | +52 55 6276 4981 | México DF 06700</small></p>
+			<div id="bodyContent">
+				<p>Aquí hacemos código, puro código. Y no tenemos website, en serio no tenemos, pero lo estamos trabajando ;) (<a href="https://www.facebook.com/HacemosCodigo">fb</a>, <a href="https://twitter.com/hacemoscodigo">tw</a>, <a href="hola [at] hacemoscodigo.com" rel="nofollow" onclick="this.href='mailto:' + 'hola' + '@' + 'hacemoscodigo.com'">mail</a>)</p>
+				<p>Estos son algunos de los sitios o aplicaciones que hemos hecho con diferentes agencias, diseñadores y clientes:</p>
+				<ul class="lista-paginas">
+					<li><a href="https://www.omnilife.com" target="_blank">https://www.omnilife.com</a></li>
+					<li><a href="http://www.mexicocomovamos.mx/" target="_blank">http://www.mexicocomovamos.mx/</a></li>
+					<li><a href="http://www.abiertodediseno.mx" target="_blank">http://www.abiertodediseno.mx</a></li>
+					<li><a href="http://www.marinter.com.mx" target="_blank">http://www.marinter.com.mx</a></li>
+					<li><a href="http://www.residencyunlimited.org" target="_blank">http://www.residencyunlimited.org</a></li>
+					<li><a href="http://www.patycantu.com" target="_blank">http://www.patycantu.com</a></li>
+					<li><a href="http://7boom.mx" target="_blank">http://7boom.mx</a></li>
+					<li><a href="http://www.futboltotal.com.mx" target="_blank">http://www.futboltotal.com.mx</a></li>
+					<li><a href="http://www.moreliafilmfest.com" target="_blank">http://www.moreliafilmfest.com</a></li>
+					<li><a href="http://directoriorealizadoresficm.com" target="_blank">http://directoriorealizadoresficm.com</a></li>
+					<li><a href="http://www.fundacionangelicafuentes.org" target="_blank">http://www.fundacionangelicafuentes.org</a></li>
+					<li><a href="http://www.chicafresh.com" target="_blank">http://www.chicafresh.com</a></li>
+					<li><a href="http://www.stuffmexico.com" target="_blank">http://www.stuffmexico.com</a></li>
+					<li><a href="http://www.vidabancomerdescuentos.com" target="_blank">http://www.vidabancomerdescuentos.com</a></li>
+					<li><a href="http://www.labebeteca.com" target="_blank">http://www.labebeteca.com</a></li>
+					<li><a href="http://www.anavasquez.com" target="_blank">http://www.anavasquez.com</a></li>
+					<li><a href="http://www.tomadeprotesta.com" target="_blank">http://www.tomadeprotesta.com</a></li>
+					<li><a href="http://www.revistadeep.com" target="_blank">http://www.revistadeep.com</a></li>
+					<li><a href="http://www.desclub.com.mx" target="_blank">http://www.desclub.com.mx</a></li>
+					<li><a href="http://www.gamemaster.com.mx" target="_blank">http://www.gamemaster.com.mx</a></li>
+					<li><a href="http://8106.tv" target="_blank">http://8106.tv</a></li>
+					<li><a href="http://arquine.com" target="_blank">http://arquine.com</a></li>
+					<li><a href="http://limulus.mx" target="_blank">http://limulus.mx</a></li>
+					<li><a href="http://prisci.la/" target="_blank">http://prisca.co</a></li>
+					<li><a href="http://www.das.com.mx" target="_blank">http://www.das.com.mx</a></li>
+					<li><a href="http://mariabaez.mx/" target="_blank">http://mariabaez.mx</a></li>
+					<li><a href="http://mfs.mx" target="_blank">http://mfs.mx</a></li>
+					<!-- <li><a href="http://www.lavozmexico.com" target="_blank">http://www.lavozmexico.com</a></li> -->
+					<!-- <li><a href="http://www.childfundmexico.org.mx" target="_blank">http://www.childfundmexico.org.mx</a></li> -->
+					<!-- <li><a href="http://essie.mx" target="_blank">http://essie.mx</a></li> -->
+					<!-- <li><a href="http://tucked-in.com/" target="_blank">http://tucked-in.com/</a></li> -->
+					<!-- <li><a href="http://ibero909.fm" target="_blank">http://ibero909.fm/</a></li> -->
+					<!-- <li><a href="http://thesilverdeer.com/" target="_blank">http://thesilverdeer.com/</a></li> -->
+					<!-- <li><a href="http://www.dr-york.com" target="_blank">http://www.dr-york.com</a></li> -->
+					<!-- <li><a href="http://accionesdf.mx" target="_blank">http://accionesdf.mx</a></li> -->
+					<!-- <li><a href="http://dreamsessions.net" target="_blank">http://dreamsessions.net/</a></li> -->
+					<!-- <li><a href="http://www.fernandomaldonado.mx/" target="_blank">http://www.fernandomaldonado.mx/</a></li> -->
+					<!-- <li><a href="http://www.parodiando.tv" target="_blank">http://www.parodiando.tv</a></li> -->
+					<!-- <li><a href="http://www.pequenosgigantes.tv" target="_blank">http://www.pequenosgigantes.tv</a></li> -->
+					<!-- <li><a href="http://pensionesencrisis.com" target="_blank">http://pensionesencrisis.com</a></li> -->
+					<!-- <li><a href="http://mastalentum.lamaquiladora.com" target="_blank">http://mastalentum.lamaquiladora.com</a></li> -->
+					<!-- <li><a href="http://constructorio.losmaquiladores.com" target="_blank">http://constructorio.losmaquiladores.com</a></li> -->
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 
 </body>
 </html>
