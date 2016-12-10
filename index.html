@@ -15,9 +15,11 @@
 	</style>
 	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript">
-		//Primeros parámetros (posicionamiento, zoom y tipo de mapa)
+	//Primeros parámetros (posicionamiento, zoom y tipo de mapa)
 	  function initialize() {
-		var latlng = new google.maps.LatLng(19.447051, -99.135425);
+	  	var locations = ['19.447051, -99.135425', '21.241376,-86.8072217', '18.2738833,-103.3452896'];
+	  	var rand = locations[Math.floor(Math.random() * locations.length)];
+		var latlng = new google.maps.LatLng(rand);
 		var myOptions = {
 		  zoom: 17,
 		  center: latlng,
@@ -84,16 +86,6 @@
 		google.maps.event.addListener(marker, 'click', function() {
 		  infowindow.open(map,marker);
 		});
-		
-		// var casa_nori = new google.maps.LatLng(19.41524, -99.16578);
-				
-		// 		var casa_nori_marker = new google.maps.Marker({
-		// 				position: casa_nori,
-		// 				map: map,
-		// 				icon: image,
-		// 				animation: google.maps.Animation.DROP,
-		// 				title: "Casa Nori"
-		// 		});
 		
 	}
 	</script>
