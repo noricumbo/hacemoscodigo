@@ -106,10 +106,12 @@
 		});
 
 		google.maps.event.addListener(infowindow, 'mouseover', function() {
+			alert('mouseover');
 		  	map.setOptions({ draggable: false, scrollwheel: false });
 		});
 
 		google.maps.event.addListener(infowindow, 'mouseout', function() {
+			alert('mouseout');
 		  	map.setOptions({ draggable: true, scrollwheel: true });
 		});
 		
