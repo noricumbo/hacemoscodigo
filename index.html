@@ -106,14 +106,16 @@
 		});
 
 		google.maps.event.addListener(infowindow, 'mouseover', function() {
-			alert('mouseover');
+			console.log('mouseover');
 		  	map.setOptions({ draggable: false, scrollwheel: false });
 		});
 
 		google.maps.event.addListener(infowindow, 'mouseout', function() {
-			alert('mouseout');
+			console.log('mouseout');
 		  	map.setOptions({ draggable: true, scrollwheel: true });
 		});
+
+		colsole.log('listo');
 		
 	}
 	</script>
