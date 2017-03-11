@@ -104,6 +104,14 @@
 		google.maps.event.addListener(marker, 'click', function() {
 		  infowindow.open(map,marker);
 		});
+
+		contentString.hover(
+			function() {
+				map.setOptions({ draggable: false, scrollwheel: false });
+			},
+			function() {
+				map.setOptions({ draggable: true, scrollwheel: true });
+			});
 		
 	}
 	</script>
