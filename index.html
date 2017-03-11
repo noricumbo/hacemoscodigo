@@ -105,13 +105,13 @@
 		  infowindow.open(map,marker);
 		});
 
-		infowindow.addEventListener("mouseover", (
-			function() {
+		infowindow.onmouseenter = function() {
 				map.setOptions({ draggable: false, scrollwheel: false });
-			},
-			function() {
+			};
+
+		infowindow.onmouseleave =	function() {
 				map.setOptions({ draggable: true, scrollwheel: true });
-			});
+			};
 		
 	}
 	</script>
