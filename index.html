@@ -39,16 +39,10 @@
 	  	var random_location = random_location.split(',');
 	  	var lat = random_location[0];
 	  	var lng = random_location[1];
-	  	var lng_center = parseInt(lng) + 0.002;
-	  	console.log(lng);
-	  	console.log(lng_center);
 		var latlng = new google.maps.LatLng(lat,lng);
-		var latlng_center = new google.maps.LatLng(lat,lng_center);
-		console.log(latlng);
-		console.log(latlng_center);
 		var myOptions = {
 		  zoom: 17,
-		  center: latlng_center,
+		  center: latlng,
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		//Estilos para el mapa
