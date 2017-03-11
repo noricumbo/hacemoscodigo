@@ -6,12 +6,13 @@
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<style type="text/css">
 		html { height: 100% }
-		body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: small; }
+		body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: 16px; line-height: 21px; background-color: black; }
 		a { color: #31999A; }
 		#map_canvas { height: 100% }
-		#content { position: absolute; top: 30px; right: 30px; color: #31999A; border-color: none; overflow-y: visible; width: 350px; height: 350px; }
-		#content ul { list-style: none; margin: 15px 0; padding: 0; background-color: #f1f1f1; }
-		#html {display: none;}
+		#content { color: #31999A; border-color: none; overflow-y: visible;  }
+		#content ul { list-style: none; padding: 15px; background-color: #f1f1f1; }
+		#html { position: absolute; top: 30px; right: 30px; width: 350px; height: 62%; background-color: white; padding: 35px; overflow: auto; }
+		.group:after { content: ""; display: table; clear: both; }
 	</style>
 	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript">
@@ -84,7 +85,7 @@
 		// var contentString = document.getElementById("html").innerHTML;
 
 		var infowindow = new google.maps.InfoWindow({
-		    content: 'Hacemos Código',
+		    content: 'Hacemos Código </>',
 			maxWidth: 350,
 			maxHeight: 350
 		});
@@ -104,8 +105,6 @@
 		google.maps.event.addListener(marker, 'click', function() {
 		  infowindow.open(map,marker);
 		});
-
-		console.log('listo');
 		
 	}
 	</script>
@@ -113,7 +112,7 @@
 <body onload="initialize()">
 	<div id="map_canvas" style="width:100%; height:100%"></div>
 
-	<div id="html">
+	<div id="html" class="group">
 		<div id="content">
 			<h1 id="firstHeading" class="firstHeading">Hacemos Código</h1>
 			<p><small>México DF (casi siempre, aunque queremos nomadear)</small></p>
