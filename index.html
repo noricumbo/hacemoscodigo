@@ -105,11 +105,11 @@
 		  infowindow.open(map,marker);
 		});
 
-		google.maps.event.addListener(infowindow, 'mouseenter', function() {
+		google.maps.event.addListener(infowindow, 'mouseover', function() {
 		  	map.setOptions({ draggable: false, scrollwheel: false });
 		});
 
-		google.maps.event.addListener(infowindow, 'mouseleave', function() {
+		google.maps.event.addListener(infowindow, 'mouseout', function() {
 		  	map.setOptions({ draggable: true, scrollwheel: true });
 		});
 		
