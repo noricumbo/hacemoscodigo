@@ -105,13 +105,13 @@
 		  infowindow.open(map,marker);
 		});
 
-		infowindow.onmouseenter = function() {
-				map.setOptions({ draggable: false, scrollwheel: false });
-			};
+		google.maps.event.addListener(infowindow, 'mouseenter', function() {
+		  	map.setOptions({ draggable: false, scrollwheel: false });
+		});
 
-		infowindow.onmouseleave =	function() {
-				map.setOptions({ draggable: true, scrollwheel: true });
-			};
+		google.maps.event.addListener(infowindow, 'mouseleave', function() {
+		  	map.setOptions({ draggable: true, scrollwheel: true });
+		});
 		
 	}
 	</script>
