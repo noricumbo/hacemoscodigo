@@ -105,13 +105,13 @@
 		  infowindow.open(map,marker);
 		});
 
-		function moseenter() {
+		infowindow.addEventListener("mouseover", (
+			function() {
 				map.setOptions({ draggable: false, scrollwheel: false });
-			};
-
-		function mouseout() {
+			},
+			function() {
 				map.setOptions({ draggable: true, scrollwheel: true });
-			};
+			});
 		
 	}
 	</script>
@@ -119,7 +119,7 @@
 <body onload="initialize()">
 	<div id="map_canvas" style="width:100%; height:100%"></div>
 
-	<div id="html" onmouseenter="mouseenter()" onmouseleave="mouseleave()">
+	<div id="html">
 		<div id="content">
 			<h1 id="firstHeading" class="firstHeading">Hacemos Código</h1>
 			<p><small>México DF (casi siempre, aunque queremos nomadear)</small></p>
