@@ -9,7 +9,7 @@
 		body { height: 100%; margin: 0px; padding: 0px; font-family: Arial; font-size: small; }
 		a { color: #31999A; }
 		#map_canvas { height: 100% }
-		#content {color: #31999A; border-color: none; overflow: hidden; height: 240px; overflow: scroll; }
+		#content {color: #31999A; border-color: none; overflow: hidden; width: 350px; height: 350px; overflow: scroll; }
 		#content ul { list-style: none; margin: 15px 0; padding: 0; background-color: #f1f1f1; }
 		#html {display: none;}
 	</style>
@@ -85,7 +85,7 @@
 
 		var infowindow = new google.maps.InfoWindow({
 		    content: contentString,
-			maxWidth: 300,
+			maxWidth: 350,
 			maxHeight: 350
 		});
 		
