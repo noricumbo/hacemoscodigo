@@ -28,43 +28,13 @@
 	  zoom: 17,
 	  center: latlng,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP,
-	  mapId: 'a403533c3522d07d90d5bcec'
+	  mapId: 'a403533c3522d07d90d5bcec',
+	  colorScheme: google.maps.ColorScheme.DARK
 	};
-	//Estilos para el mapa
-	var styles = [
-		{
-			featureType: "all",
-			stylers: [
-				{ invert_lightness: true },
-				{ visibility: "on" }
-			]
-		},{
-			featureType: "poi",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		},{
-			featureType: "landscape",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		},{
-			featureType: "transit",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		}
-	];
 	
 	//Crea el objeto mapa
 	var map = new google.maps.Map(document.getElementById("map_canvas"),
 		myOptions);
-		
-	//Aplica estilos al mapa
-	map.setOptions({styles: styles});
 	
 	//Infowindow
 	
