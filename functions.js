@@ -69,7 +69,7 @@
 		map: map
 	});
 
-	marker.addListener('click', function() {
+	marker.addEventListener('gmp-click', function() {
 	  infowindow.open({
 		anchor: marker,
 		map: map
