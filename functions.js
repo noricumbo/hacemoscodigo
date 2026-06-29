@@ -27,7 +27,8 @@
 	var myOptions = {
 	  zoom: 17,
 	  center: latlng,
-	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	  mapTypeId: google.maps.MapTypeId.ROADMAP,
+	  mapId: 'a403533c3522d07d90d5bcec'
 	};
 	//Estilos para el mapa
 	var styles = [
@@ -75,20 +76,29 @@
 		maxHeight: 350
 	});
 	
-	var image = 'maquila_marker.png';
+	var markerIcon = document.createElement('img');
+	markerIcon.src = 'maquila_marker.png';
+	markerIcon.alt = 'Hacemos Código';
+	markerIcon.width = 12;
+	markerIcon.height = 22;
 	
-	var marker = new google.maps.Marker({
+	var marker = new google.maps.marker.AdvancedMarkerElement({
 	    position: latlng,
 	    map: map,
-		icon: image,
-		animation: google.maps.Animation.DROP,
+		content: markerIcon,
 	    title:"Los Maquiladores"
 	});
 	
-	infowindow.open(map,marker);
+	infowindow.open({
+		anchor: marker,
+		map: map
+	});
 
-	google.maps.event.addListener(marker, 'click', function() {
-	  infowindow.open(map,marker);
+	marker.addListener('click', function() {
+	  infowindow.open({
+		anchor: marker,
+		map: map
+	  });
 	});
 	
 }
